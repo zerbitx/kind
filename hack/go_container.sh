@@ -36,7 +36,7 @@ CACHE_VOLUME="${CACHE_VOLUME:-kind-build-cache}"
 # allow overriding docker cli, auto-detect with fallback to docker
 DOCKER="${DOCKER:-"$(which docker || which podman || echo "docker")"}"
 # ========================== END SCRIPT SETTINGS ===============================
-
+export GOOS=linux
 # autodetects host GOOS and GOARCH and exports them if not set
 detect_and_set_goos_goarch() {
   # if we have go, just ask go! NOTE: this respects explicitly set GOARCH / GOOS
